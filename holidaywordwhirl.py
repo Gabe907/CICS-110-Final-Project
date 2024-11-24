@@ -1,4 +1,4 @@
-import pygame, random, sys, os
+import pygame, random, sys
 
 pygame.init()
 pygame.mixer.init()
@@ -148,6 +148,8 @@ def mainmenuscreen(screen): # Main Menu Screen
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit
                 run = False
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1: 
                 if start_button.collidepoint(MOUSE_POS):  # Start button clicked
@@ -164,6 +166,8 @@ def mainmenuscreen(screen): # Main Menu Screen
                     #     screen = pygame.display.set_mode((native_width, native_height), pygame.FULLSCREEN)
                     return
                 elif quit_button.collidepoint(MOUSE_POS):
+                    pygame.quit()
+                    sys.exit()
                     run = False
 
         pygame.display.update()
