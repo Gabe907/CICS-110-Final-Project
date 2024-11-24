@@ -1,7 +1,5 @@
 import pygame, random, sys, os
 
-os.chdir('/Users/gabelojo/Coding/CICS 110/CICS 110 FINAL PROJECT')
-
 pygame.init()
 pygame.mixer.init()
 
