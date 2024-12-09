@@ -508,13 +508,13 @@ def gamescreen(word_speed, score, missed_words, max_misses, active_words, pause)
                         pause = False 
                     elif pause_result == "restart":
                         active_words.clear()
-                        word_speed = 1
+                        word_speed = 0.75
                         score = 0 
                         missed_words = 0
                         gamescreen(word_speed, score, missed_words, max_misses, active_words, pause)
                     elif pause_result == "mainmenu":
                         active_words.clear()
-                        word_speed = 1
+                        word_speed = 0.75
                         score = 0 
                         missed_words = 0
                         mainmenuscreen(screen)
@@ -567,7 +567,7 @@ def gamescreen(word_speed, score, missed_words, max_misses, active_words, pause)
                     pygame.display.update()
                     pygame.time.wait(4000)
                     active_words.clear()
-                    word_speed = 1 # Reset Speed
+                    word_speed = 0.75 # Reset Speed
                     score = 0 # Reset Score
                     missed_words = 0 # Reset Misses
                     mainmenuscreen(screen)
@@ -577,7 +577,7 @@ def gamescreen(word_speed, score, missed_words, max_misses, active_words, pause)
 
         # Increase difficulty over time
         if score > 0:
-            word_speed = 1 + (score // 5) * 0.1 # Words speed is faster every 5 points
+            word_speed = 0.75 + (score // 5) * 0.1 # Words speed is faster every 5 points
         if score % 5 == 0:
             time -= 25 # Time between word drops becomes faster every 5 points
 
